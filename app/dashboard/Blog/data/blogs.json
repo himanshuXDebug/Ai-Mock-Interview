@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "title": "AI-Powered Mock Interviews",
+    "description": "Simulate real-life interview scenarios with AI-driven question and answer sessions. The AI adapts to user responses, offering dynamic follow-ups and personalized feedback. This feature helps users get comfortable with the pressure of real interviews, making the preparation process more immersive and effective.",
+    "features": [
+      "Real-time interview simulations",
+      "Role-specific question sets",
+      "Customizable difficulty levels",
+      "Immediate feedback and performance analysis"
+    ],
+    "date": "2025-03-08",
+    "tags": ["AI", "Interview Prep", "Career Development"]
+  },
+  {
+    "id": 2,
+    "title": "10 Common Interview Questions You Need to Master",
+    "description": "Mastering common interview questions is crucial for success. This guide walks you through 10 of the most frequently asked questions, complete with sample answers and tips to make a lasting impression.",
+    "features": [
+      "Top 10 essential questions",
+      "Sample responses",
+      "Tips for structuring answers",
+      "Mistakes to avoid"
+    ],
+    "date": "2025-02-15",
+    "tags": ["Interview Tips", "Job Search", "Career Advice"]
+  },
+  {
+    "id": 3,
+    "title": "Question Bank & Practice Sets",
+    "description": "Access a vast library of interview questions categorized by industry, role, and skill set. Practice at your own pace and track your progress over time. Whether you're brushing up on algorithms or refining your behavioral answers, this feature is your go-to practice hub.",
+    "features": [
+      "Curated technical and behavioral questions",
+      "AI-suggested practice topics",
+      "Bookmark and revisit questions",
+      "Progress tracking and performance history"
+    ],
+    "date": "2025-03-02",
+    "tags": ["Practice", "Skill Building", "Interview Questions"]
+  },
+  {
+    "id": 4,
+    "title": "How AI is Revolutionizing the Hiring Process",
+    "description": "AI is transforming recruitment, from resume screening to candidate assessments. Learn how companies leverage AI to streamline hiring and how you can adapt to this evolving landscape.",
+    "features": [
+      "AI-powered candidate evaluation",
+      "Automated resume screening",
+      "Predictive hiring analytics",
+      "Personalized interview experiences"
+    ],
+    "date": "2025-02-20",
+    "tags": ["Industry Insights", "AI in Hiring", "Recruitment Tech"]
+  },
+  {
+    "id": 5,
+    "title": "User Dashboard & Analytics",
+    "description": "Personalized dashboard to manage interviews, view insights, and monitor growth over time. Understand strengths and areas for improvement with detailed analytics and visualization tools that make your progress clear and actionable.",
+    "features": [
+      "Interview history and scores",
+      "Skill heatmaps and analytics",
+      "Goal setting and progress tracking",
+      "Session summaries and improvement tips"
+    ],
+    "date": "2025-03-05",
+    "tags": ["User Experience", "Analytics", "Self-Improvement"]
+  },
+  {
+    "id": 6,
+    "title": "From Rejection to Offer: A Success Story",
+    "description": "Hear how one candidate turned multiple rejections into an offer by using structured practice, feedback, and resilience. This inspiring story highlights the power of persistence and continuous learning.",
+    "features": [
+      "Real-life success journey",
+      "Key lessons learned",
+      "Tips for overcoming rejection",
+      "Mindset shifts for growth"
+    ],
+    "date": "2025-02-28",
+    "tags": ["Success Stories", "Motivation", "Career Growth"]
+  },
+  {
+    "id": 7,
+    "title": "Post-Interview Reviews & Feedback",
+    "description": "Receive detailed reviews after every interview session. The AI highlights key points, missed opportunities, and provides actionable insights to help you improve. This feature turns every interview into a learning experience, helping users refine their techniques step by step.",
+    "features": [
+      "In-depth response analysis",
+      "Strengths and weakness breakdown",
+      "Tips for improvement",
+      "Feedback history and review logs"
+    ],
+    "date": "2025-03-10",
+    "tags": ["Feedback", "Learning", "Interview Strategy"]
+  },
+  {
+    "id": 8,
+    "title": "Upgrade Plans & Premium Features",
+    "description": "Flexible subscription options with access to advanced features, exclusive content, and priority support. Perfect for users who want to take their interview prep to the next level with specialized resources and expert guidance.",
+    "features": [
+      "One-on-one coaching sessions",
+      "Exclusive question sets",
+      "Priority access to new features",
+      "Certificate of completion"
+    ],
+    "date": "2025-02-12",
+    "tags": ["Premium", "Upskilling", "Coaching"]
+  },
+  {
+    "id": 9,
+    "title": "Community & Peer Practice",
+    "description": "Connect with other users to share experiences, exchange tips, and conduct peer-to-peer mock interviews. This feature fosters a supportive learning environment where users can learn from each other and build confidence through collaboration.",
+    "features": [
+      "Community discussion boards",
+      "Peer-to-peer mock interviews",
+      "Group study sessions",
+      "Success stories and testimonials"
+    ],
+    "date": "2025-03-01",
+    "tags": ["Community", "Networking", "Peer Learning"]
+  },
+  {
+    "id": 10,
+    "title": "Interview Readiness Checklist",
+    "description": "A comprehensive checklist to ensure you're fully prepared for interview day. This tool covers everything from technical concepts to mindset tips, helping you walk into your interview with confidence.",
+    "features": [
+      "Pre-interview preparation steps",
+      "Mindset and stress management tips",
+      "Final-day review materials",
+      "Customizable checklists for different roles"
+    ],
+    "date": "2025-03-03",
+    "tags": ["Preparation", "Confidence", "Career Toolkit"]
+  }
+]
