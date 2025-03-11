@@ -1,77 +1,117 @@
-import { SignIn } from '@clerk/nextjs'
+"use client";
+import { SignIn } from '@clerk/nextjs';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
+
 export default function Page() {
-  return(
-  <section className="bg-white dark:bg-gray-900">
-    <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-      <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          className="absolute inset-0 h-full w-full object-cover opacity-80"
-        />
-  
-        <div className="hidden lg:relative lg:block lg:p-12">
-          <a className="block text-white" href="#">
-            <span className="sr-only">Home</span>
-            <svg
-              className="h-8 sm:h-10"
-              viewBox="0 0 28 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  return (
+    <section className="bg-gray-50 dark:bg-gray-900 h-screen overflow-hidden">
+      <div className="grid h-screen lg:grid-cols-12">
+        <section className="relative lg:col-span-5 xl:col-span-6 h-full hidden lg:block">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/95 to-blue-900/90 z-10"></div>
+
+          <motion.img
+            initial={{ scale: 1.02 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 3 }}
+            alt="Interview preparation"
+            src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+
+          <div className="relative z-20 flex flex-col justify-center h-full p-12">
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7 }}
             >
-              <path
-                d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0C16.7507 0 19.7186 1.02234 22.1261 2.90424C24.5336 4.7861 26.2422 7.4194 26.98 10.3847H25.78C23.7557 10.3549 21.7729 10.9599 20.11 12.1147C20.014 12.1842 19.9138 12.2477 19.81 12.3047H19.67C19.5662 12.2477 19.466 12.1842 19.37 12.1147C17.6924 10.9866 15.7166 10.3841 13.695 10.3841C11.6734 10.3841 9.6976 10.9866 8.02 12.1147C7.924 12.1842 7.8238 12.2477 7.72 12.3047H7.58C7.4762 12.2477 7.376 12.1842 7.28 12.1147C5.6171 10.9599 3.6343 10.3549 1.61 10.3847H0.41ZM23.62 16.6547C24.236 16.175 24.9995 15.924 25.78 15.9447H27.39V12.7347H25.78C24.4052 12.7181 23.0619 13.146 21.95 13.9547C21.3243 14.416 20.5674 14.6649 19.79 14.6649C19.0126 14.6649 18.2557 14.416 17.63 13.9547C16.4899 13.1611 15.1341 12.7356 13.745 12.7356C12.3559 12.7356 11.0001 13.1611 9.86 13.9547C9.2343 14.416 8.4774 14.6649 7.7 14.6649C6.9226 14.6649 6.1657 14.416 5.54 13.9547C4.4144 13.1356 3.0518 12.7072 1.66 12.7347H0V15.9447H1.61C2.39051 15.924 3.154 16.175 3.77 16.6547C4.908 17.4489 6.2623 17.8747 7.65 17.8747C9.0377 17.8747 10.392 17.4489 11.53 16.6547C12.1468 16.1765 12.9097 15.9257 13.69 15.9447C14.4708 15.9223 15.2348 16.1735 15.85 16.6547C16.9901 17.4484 18.3459 17.8738 19.735 17.8738C21.1241 17.8738 22.4799 17.4484 23.62 16.6547ZM23.62 22.3947C24.236 21.915 24.9995 21.664 25.78 21.6847H27.39V18.4747H25.78C24.4052 18.4581 23.0619 18.886 21.95 19.6947C21.3243 20.156 20.5674 20.4049 19.79 20.4049C19.0126 20.4049 18.2557 20.156 17.63 19.6947C16.4899 18.9011 15.1341 18.4757 13.745 18.4757C12.3559 18.4757 11.0001 18.9011 9.86 19.6947C9.2343 20.156 8.4774 20.4049 7.7 20.4049C6.9226 20.4049 6.1657 20.156 5.54 19.6947C4.4144 18.8757 3.0518 18.4472 1.66 18.4747H0V21.6847H1.61C2.39051 21.664 3.154 21.915 3.77 22.3947C4.908 23.1889 6.2623 23.6147 7.65 23.6147C9.0377 23.6147 10.392 23.1889 11.53 22.3947C12.1468 21.9165 12.9097 21.6657 13.69 21.6847C14.4708 21.6623 15.2348 21.9135 15.85 22.3947C16.9901 23.1884 18.3459 23.6138 19.735 23.6138C21.1241 23.6138 22.4799 23.1884 23.62 22.3947Z"
-                fill="currentColor"
-              />
-            </svg>
-          </a>
-  
-          <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-            Welcome to Reharse
-          </h2>
-  
-          <p className="mt-4 leading-relaxed text-white/90">
-            A Plateform where you can improve yourself front of
-          </p>
-        </div>
-      </section>
-  
-      <main
-        className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
-      >
-        <div className="max-w-xl lg:max-w-3xl">
-          <div className="relative -mt-16 block lg:hidden">
-            <a
-              className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20 dark:bg-gray-900"
-              href="#"
-            >
-              <span className="sr-only">Home</span>
-              <svg
-                className="h-8 sm:h-10"
-                viewBox="0 0 28 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0C16.7507 0 19.7186 1.02234 22.1261 2.90424C24.5336 4.7861 26.2422 7.4194 26.98 10.3847H25.78C23.7557 10.3549 21.7729 10.9599 20.11 12.1147C20.014 12.1842 19.9138 12.2477 19.81 12.3047H19.67C19.5662 12.2477 19.466 12.1842 19.37 12.1147C17.6924 10.9866 15.7166 10.3841 13.695 10.3841C11.6734 10.3841 9.6976 10.9866 8.02 12.1147C7.924 12.1842 7.8238 12.2477 7.72 12.3047H7.58C7.4762 12.2477 7.376 12.1842 7.28 12.1147C5.6171 10.9599 3.6343 10.3549 1.61 10.3847H0.41ZM23.62 16.6547C24.236 16.175 24.9995 15.924 25.78 15.9447H27.39V12.7347H25.78C24.4052 12.7181 23.0619 13.146 21.95 13.9547C21.3243 14.416 20.5674 14.6649 19.79 14.6649C19.0126 14.6649 18.2557 14.416 17.63 13.9547C16.4899 13.1611 15.1341 12.7356 13.745 12.7356C12.3559 12.7356 11.0001 13.1611 9.86 13.9547C9.2343 14.416 8.4774 14.6649 7.7 14.6649C6.9226 14.6649 6.1657 14.416 5.54 13.9547C4.4144 13.1356 3.0518 12.7072 1.66 12.7347H0V15.9447H1.61C2.39051 15.924 3.154 16.175 3.77 16.6547C4.908 17.4489 6.2623 17.8747 7.65 17.8747C9.0377 17.8747 10.392 17.4489 11.53 16.6547C12.1468 16.1765 12.9097 15.9257 13.69 15.9447C14.4708 15.9223 15.2348 16.1735 15.85 16.6547C16.9901 17.4484 18.3459 17.8738 19.735 17.8738C21.1241 17.8738 22.4799 17.4484 23.62 16.6547ZM23.62 22.3947C24.236 21.915 24.9995 21.664 25.78 21.6847H27.39V18.4747H25.78C24.4052 18.4581 23.0619 18.886 21.95 19.6947C21.3243 20.156 20.5674 20.4049 19.79 20.4049C19.0126 20.4049 18.2557 20.156 17.63 19.6947C16.4899 18.9011 15.1341 18.4757 13.745 18.4757C12.3559 18.4757 11.0001 18.9011 9.86 19.6947C9.2343 20.156 8.4774 20.4049 7.7 20.4049C6.9226 20.4049 6.1657 20.156 5.54 19.6947C4.4144 18.8757 3.0518 18.4472 1.66 18.4747H0V21.6847H1.61C2.39051 21.664 3.154 21.915 3.77 22.3947C4.908 23.1889 6.2623 23.6147 7.65 23.6147C9.0377 23.6147 10.392 23.1889 11.53 22.3947C12.1468 21.9165 12.9097 21.6657 13.69 21.6847C14.4708 21.6623 15.2348 21.9135 15.85 22.3947C16.9901 23.1884 18.3459 23.6138 19.735 23.6138C21.1241 23.6138 22.4799 23.1884 23.62 22.3947Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-  
-            <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl dark:text-white">
-              Welcome to Reharsh
-            </h1>
-  
-            <p className="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-              quibusdam aperiam voluptatum.
-            </p>
+              <div className="flex items-center gap-3 mb-12">
+                <div className="h-14 w-14 rounded-lg bg-white flex items-center justify-center shadow-lg">
+                  <span className="text-indigo-700 font-bold text-2xl">R</span>
+                </div>
+                <span className="text-white font-bold text-3xl">Reharse</span>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-sm">
+                Ace your next interview with AI-powered practice
+              </h1>
+
+              <p className="text-xl text-white leading-relaxed max-w-lg drop-shadow-sm font-medium">
+                Practice with realistic mock interviews tailored to your industry, experience level, and desired role.
+              </p>
+
+              <div className="mt-12 space-y-6">
+                <div className="flex items-center text-white">
+                  <div className="mr-4 h-10 w-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <p className="text-lg font-medium">AI-powered interview questions specific to your role</p>
+                </div>
+
+                <div className="flex items-center text-white">
+                  <div className="mr-4 h-10 w-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <p className="text-lg font-medium">Detailed feedback to improve your responses</p>
+                </div>
+
+                <div className="flex items-center text-white">
+                  <div className="mr-4 h-10 w-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <p className="text-lg font-medium">Practice anytime, anywhere at your convenience</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
-       <SignIn />
-        </div>
-      </main>
-    </div>
-  </section>
-  )
+        </section>
+
+        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 xl:col-span-6 h-full bg-gray-300 dark:bg-gray-900">
+          <div className="w-full max-w-md">
+            <motion.div
+              className="block lg:hidden mb-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-14 w-14 rounded-lg bg-gradient-to-r from-indigo-600 to-blue-500 flex items-center justify-center shadow-md">
+                  <span className="text-white font-bold text-2xl">R</span>
+                </div>
+                <span className="text-gray-900 dark:text-white font-bold text-3xl">Reharse</span>
+              </div>
+
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                Ace your next interview
+              </h1>
+
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+                Practice with AI-powered mock interviews tailored to your needs.
+              </p>
+            </motion.div>
+            <div className="justify-center items-center">
+              <div className="bg-gray-200 p-6 rounded-2xl shadow-lg">
+                <SignIn />
+              </div>
+            </div>
+
+
+          </div>
+        </main>
+      </div>
+    </section>
+  );
 }
