@@ -112,6 +112,9 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 className="rounded-full px-8 py-6 text-lg"
+                onClick={()=>{
+                  toast.warning("Demo Is Not Available")
+                }}
               >
                 Watch Demo
               </Button>
@@ -303,7 +306,7 @@ export default function Home() {
               Join hundreds of students who have transformed their interview
               skills with our AI-powered platform.
             </p>
-            <Link href="/sign-up">
+            <Link href="/dashboard">
               <Button
                 size="lg"
                 className="rounded-full px-8 py-6 bg-white text-blue-600 hover:bg-gray-100 text-lg"
@@ -335,7 +338,6 @@ export default function Home() {
                 preparation accessible to all students.
               </p>
               <div className="flex gap-4">
-                {/* Social media icons would go here */}
               </div>
             </div>
 
