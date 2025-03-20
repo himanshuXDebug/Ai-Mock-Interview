@@ -16,7 +16,6 @@ function Header() {
     router.push('/dashboard/Pricing')
   }
   
-  // Close the mobile menu when path changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [path]);
@@ -55,7 +54,6 @@ function Header() {
   return (
     <>
       <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200 shadow-sm fixed top-0 left-0 right-0 z-10">
-        {/* Logo with improved size */}
         <div className="relative h-14 w-64">
           <div className="flex items-center gap-2">
             <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
@@ -66,7 +64,7 @@ function Header() {
         </div>
         
         <nav className="hidden md:flex items-center">
-          <Link href="http://localhost:3000">
+          <Link href="/">
             <span className={`px-5 py-2 text-base font-medium rounded-md transition-all ${
               path === '/app' ? 'text-indigo-600 bg-indigo-50' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
             }`}>
