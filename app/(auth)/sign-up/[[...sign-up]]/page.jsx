@@ -3,7 +3,7 @@ import { SignUp } from "@clerk/nextjs";
 export default function Page() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="hidden lg:grid grid-cols-12 h-screen max-w-screen-2xl mx-auto">
+      <div className="hidden lg:grid grid-cols-12 h-screen max-w-screen-4xl mx-auto">
         <section className="relative lg:col-span-5 xl:col-span-6 flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/95 to-blue-900/90 z-10"></div>
           <img
