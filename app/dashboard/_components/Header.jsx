@@ -66,7 +66,7 @@ function Header() {
         </div>
         
         <nav className="hidden md:flex items-center">
-          <Link href="http://localhost:3000">
+          <Link href="/">
             <span className={`px-5 py-2 text-base font-medium rounded-md transition-all ${
               path === '/app' ? 'text-indigo-600 bg-indigo-50' : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
             }`}>
@@ -129,7 +129,6 @@ function Header() {
         </div>
       </header>
 
-      {/* Mobile sidebar menu */}
       <div className={`fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div 
           className={`mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
@@ -208,7 +207,6 @@ function Header() {
         </div>
       </div>
 
-      {/* Add padding to ensure content isn't hidden under the fixed header */}
       <div className="pt-20"></div>
     </>
   )

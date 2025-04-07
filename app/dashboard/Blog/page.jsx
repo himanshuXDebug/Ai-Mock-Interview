@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { toast, Toaster } from 'sonner';
 import { motion, AnimatePresence } from 'framer-motion';
 import blogData from './data/blogs.json';
+import Image from 'next/image';
 
 export default function Blog() {
   const [selectedBlog, setSelectedBlog] = useState(null);
@@ -179,10 +180,11 @@ export default function Blog() {
 
                   <div className="flex items-center mb-4">
                     <div className="flex-shrink-0">
-                      <img
+                      <Image
                         className="h-10 w-10 rounded-full object-cover ring-2 ring-indigo-100 dark:ring-indigo-900"
                         src={blog.authorAvatar || "/avatars/Author.png"}
                         alt="Author avatar"
+                        width={200} height={200}
                       />
                     </div>
                     <div className="ml-3">
@@ -302,10 +304,12 @@ export default function Blog() {
                     </h3>
 
                     <div className="flex items-center border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
-                      <img
+                      <Image
                         className="h-10 w-10 rounded-full object-cover ring-2 ring-indigo-500"
                         src={selectedBlog.authorAvatar || "/avatars/Author.png"}
                         alt="Author avatar"
+                        width={200}
+                        height={200}
                       />
 
                       <div className="ml-3">

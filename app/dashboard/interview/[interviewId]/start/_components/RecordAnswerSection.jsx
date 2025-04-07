@@ -11,7 +11,6 @@ import { useUser } from '@clerk/nextjs';
 import moment from 'moment/moment';
 import { db } from '@/utils/db';
 
-// Dynamically import Webcam
 const Webcam = dynamic(() => import('react-webcam'), { ssr: false });
 
 function RecordAnswerSection({ mockInterviewQuestion, activeQuestionIndex, interviewData, mockId }) {
@@ -58,11 +57,9 @@ function RecordAnswerSection({ mockInterviewQuestion, activeQuestionIndex, inter
   useEffect(() => {
     if (!isRecording) {
       if (userAnswer.trim().length === 0) {
-        // toast("No Answer Provided", {
-        //   style: { color: 'blue' }
-        // });
+       
         console.log("No answer provided.");
-      } else if (userAnswer.trim().length < 20) { // Minimum threshold for answer length
+      } else if (userAnswer.trim().length < 20) { 
         toast("Answer is too short, please try again.", {
           style: { color: '#d9534f' }
         });
@@ -131,10 +128,8 @@ function RecordAnswerSection({ mockInterviewQuestion, activeQuestionIndex, inter
       const parsedFeedback = JSON.parse(processedResponse);
       console.log("Parsed AI Feedback:", parsedFeedback);
 
-      // Wait for 3 seconds before showing feedback
       await new Promise(resolve => setTimeout(resolve, 3000));
 
-      // Save the answer and feedback in the DB
       const resp = await db.insert(UserAnswer).values({
         mockIdRef: mockId,
         question: mockInterviewQuestion[activeQuestionIndex]?.question,

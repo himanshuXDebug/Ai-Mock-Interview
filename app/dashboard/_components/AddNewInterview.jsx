@@ -28,7 +28,6 @@ function AddNewInterview() {
     const { user } = useUser();
 
     const sanitizeJSON = (text) => {
-        // Remove code block markers and get just the JSON content
         const jsonMatch = text.match(/```json\n([\s\S]*?)\n```/);
         if (jsonMatch) {
             return jsonMatch[1].trim();
@@ -38,7 +37,6 @@ function AddNewInterview() {
 
     const validateAndParseJSON = (jsonString) => {
         try {
-            // Ensure the JSON is properly formatted
             const cleaned = jsonString.replace(/\n\s*/g, ' ').trim();
             return JSON.parse(cleaned);
         } catch (error) {

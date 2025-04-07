@@ -42,6 +42,15 @@ function StartInterview({ params }) {
         }
     };
 
+    const handleNextQuestion = () => {
+        setActiveQuestionIndex((prev) => prev + 1);
+    };
+    
+    const handlePrevQuestion = () => {
+        setActiveQuestionIndex((prev) => prev - 1);
+    };
+    
+
     return (
         <div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
@@ -56,19 +65,30 @@ function StartInterview({ params }) {
                    mockId={interviewData?.mockId || interviewId}
                 />
             </div>
-            <div className='flex justify-end gap-6'>
-                {activeQuestionIndex>0&&
-                <Button onClick={()=>setActiveQuestionIndex(activeQuestionIndex-1)}>Previous Question</Button>
-                }
-                {activeQuestionIndex!=mockInterviewQuestion.length-1&&
-                <Button onClick={()=>setActiveQuestionIndex(activeQuestionIndex+1)}>Next Question</Button>
-                }
-                {activeQuestionIndex==mockInterviewQuestion.length-1&&
-                <Link href={'/dashboard/interview/'+interviewData?.mockId+'/feedback'}>
-                <Button >End Interview</Button>
-                </Link>
-                }
-            </div>
+            <div className="mt-6 relative">
+    <div className="absolute bottom-4 left-4">
+        {activeQuestionIndex > 0 && (
+            <Button onClick={handlePrevQuestion} className="px-4 py-2 bg-purple-600 text-white rounded">
+                Previous Question
+            </Button>
+        )}
+    </div>
+
+    <div className="absolute bottom-4 right-4">
+        {activeQuestionIndex !== mockInterviewQuestion.length - 1 ? (
+            <Button onClick={handleNextQuestion} className="px-4 py-2 bg-purple-600 text-white rounded">
+                Next Question
+            </Button>
+        ) : (
+            <Link href={'/dashboard/interview/' + interviewData?.mockId + '/feedback'}>
+                <Button className="px-4 py-2 bg-red-600 text-white rounded">
+                    End Interview
+                </Button>
+            </Link>
+        )}
+    </div>
+</div>
+
         </div>
     );
 }
